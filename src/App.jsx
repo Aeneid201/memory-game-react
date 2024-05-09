@@ -8,6 +8,7 @@ function App() {
   const [characterList, setCharacterList] = useState([])
   const [selected, setSelected] = useState([])
   const [score, setScore] = useState(0)
+  const [bestScore, setBestScore] = useState(0)
 
   useEffect(() => {
     let ignore = false
@@ -35,7 +36,6 @@ function App() {
         setScore(score+1)
         return [...prevItems, item.dataset.id]
       }
-      
     })
 
     setCharacterList(prevItems => {
