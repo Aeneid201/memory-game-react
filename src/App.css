@@ -42,6 +42,11 @@
 
 .single--card .inner {
   cursor: pointer;
+  transition: 0.4s all ease;
+}
+
+.single--card .inner:hover {
+  box-shadow: 0 0 40px rosybrown;
 }
 
 .galada {

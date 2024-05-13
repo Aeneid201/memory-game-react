@@ -31,6 +31,7 @@ function App() {
     setSelected(prevItems => {
       if(prevItems.includes(item.dataset.id)){
         setScore(0)
+        setBestScore(prevBestScore => prevBestScore > score ? prevBestScore : score)
         return []
       }else{
         setScore(score+1)
@@ -54,10 +55,11 @@ function App() {
             <p className='acme'>Get points by clicking on an image but don't click on any more than once!</p>
           </div>
           <div className="col-lg-6 col-sm-6 col-12 text-end">
-            Score : {score}
+            <p>Score : {score}</p>
+            <p>Best Score: {bestScore}</p>
           </div>
         </div>
-        <div className="row">
+        <div className="row mt-4">
         {
           characterList.map(character => <Card id={character.id} onClick={(e) => Scramble(e)} key={character.id} url={character.images[0]} name={character.name} />)
         }
